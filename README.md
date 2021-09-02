@@ -17,14 +17,15 @@ Python ist sehr empfindlich bei den Einrückungen – daher checken ob nach copy
 
 # Unterstützte SmartMeter
 
-* Kaifa Ma110 1-Phasenzähler
+* Kaifa Ma110M 1-Phasenzähler
 * Kaifa MA309M 3-Phasenzähler
 
 
 # Netzbetreiber
 
 * [Tinetz](https://www.tinetz.at/)
-
+  Die Kundenschnittstelle ist per Default deaktiviert. Eine Freischaltung kann kostenlos beim Netzbetreiber beantragt werden. 
+  Nach Freischaltung bekommt man per Post den persönlichen Key zugesandt. Dieser ist für die Dekodierung der verschlüsselten Daten notwendig.
 
 # Für den Nachbau benötige Teile
 

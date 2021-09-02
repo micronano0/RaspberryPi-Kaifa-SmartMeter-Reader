@@ -17,7 +17,7 @@ Python ist sehr empfindlich bei den Einrückungen – daher checken ob nach copy
 
 # Unterstützte SmartMeter
 
-* Kaifa Ma110M 1-Phasenzähler
+* Kaifa MA110M 1-Phasenzähler
 * Kaifa MA309M 3-Phasenzähler
 
 

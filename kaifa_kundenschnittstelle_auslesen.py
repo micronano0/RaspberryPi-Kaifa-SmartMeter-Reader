@@ -1,8 +1,3 @@
-# Python3 Prog am Raspberry Pi
-# Mbus-Adapter - die serielle Schnittstelle ist über ein Seriell zu USB Adapterkabel am Raspi angesteckt.
-# der Key wird beim Programmstart aus der Datei key.txt gelesen.
-# wenn die Variable logging auf 1 gesetzt wird, dann werden die 5sek Werte zusätzlich in eine Logdatei geschrieben.
-
 from os import system, name
 import time
 from time import sleep
@@ -39,14 +34,16 @@ def recv(serial):
             print ("\n...")
             continue
         else:
-            print ("\n...lausche auf Schnittstelle")
+            #print ("\n...lausche auf Schnittstelle")
             break
         sleep(6)
     return data
 
+	
+# hier wurde die serielle Schnittstelle vom Raspberry verwendet
 if __name__ == '__main__':
     serial = serial.Serial(
-     port='/dev/ttyUSB0',
+     port='/dev/serial0',
      baudrate = 2400,
      parity=serial.PARITY_EVEN,
      stopbits=serial.STOPBITS_ONE,
@@ -81,9 +78,9 @@ if __name__ == '__main__':
 
         if doit == 1 :
             clear()
-            print ("data: ", data.hex())
+            #print ("data: ", data.hex())
             msglen1 = int(hex(data[1]),16) # 1. FA --- 250 Byte
-            print ("msg1: ", msglen1)
+            #print ("msg1: ", msglen1)
 
             header1 = 27
             header2 = 9
@@ -130,7 +127,7 @@ if __name__ == '__main__':
             # OBIS Code Werte aus decrypted.hex auslesen
 
             databin = decrypted.hex()
-            ueberschrift = ("\nOBIS Code\tBezeichnung\t\t\t Wert")
+            ueberschrift = ("\n\t\t*** KUNDENSCHNITTSTELLE ***\n\nOBIS Code\tBezeichnung\t\t\t Wert")
             print (ueberschrift)
             #print(databin)
 
